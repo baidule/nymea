@@ -6,7 +6,7 @@
     <message>
         <location filename="../libnymea-core/cloudnotifications.cpp" line="56"/>
         <location filename="../libnymea-core/cloudnotifications.cpp" line="121"/>
-        <source>Cloud Notifications</source>
+        <source>Cloud Notifications2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
