@@ -216,9 +216,7 @@ JsonReply *RulesHandler::GetRuleDetails(const QVariantMap &params)
         return createReply(statusToReply(RuleEngine::RuleErrorRuleNotFound));
     }
     QVariantMap returns = statusToReply(RuleEngine::RuleErrorNoError);
-    qWarning() << "Have rule" << rule;
     QJsonDocument jsonDoc = QJsonDocument::fromVariant(JsonTypes::packRule(rule));
-    qWarning() << "packed:" << jsonDoc.toJson();
     returns.insert("rule", JsonTypes::packRule(rule));
     return createReply(returns);
 }
