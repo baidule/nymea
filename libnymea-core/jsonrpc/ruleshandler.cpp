@@ -58,6 +58,7 @@
 #include "loggingcategories.h"
 
 #include <QDebug>
+#include <QJsonDocument>
 
 namespace nymeaserver {
 
@@ -215,6 +216,7 @@ JsonReply *RulesHandler::GetRuleDetails(const QVariantMap &params)
         return createReply(statusToReply(RuleEngine::RuleErrorRuleNotFound));
     }
     QVariantMap returns = statusToReply(RuleEngine::RuleErrorNoError);
+    QJsonDocument jsonDoc = QJsonDocument::fromVariant(JsonTypes::packRule(rule));
     returns.insert("rule", JsonTypes::packRule(rule));
     return createReply(returns);
 }
